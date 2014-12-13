@@ -1,0 +1,14 @@
+\chapter{Conclusions}
+We have successfully designed a set of electronic circuits, printed the PCB boards and robot chassis on a 3D printer (Makerbot). We have tested all the components and their behaviours trying to achieve a stable, robust and secure design.
+
+We printed a new main board with different layout and parameters from the original one. The main board provides a good foundation for the other sub parts. It includes a power supply, platform for FPGA, uTosNet, other PCBs. 
+
+We printed a sensor board connected to the main board. This board is connected directly to the distance sensor and converts the analogue data through the ADC to the FPGA. We managed to fully run the ADC and also the uTosNet.
+
+ We printed two separate H-bridge board controlling the motor. This H-bridges are connected to a H-bridge drive board which is connected directly to the main board. This drive board enables us to control the motors, either the direction of rotation as well as the speed of the motors.
+
+There are various improvements we could add. It is possible to add more sensors 
+to make a more reliable robot. The control system could be also more complex and
+sophisticated to perform better. 
+
+ To sumarize everything we tested and designed working and quite stable circuits which provide the desired functionality for our project. We implemented several methods crucial to the control system, the PWM signal with variable duty cycle, to control speed of motors, required ADC communication and signalling, and also the uTosNet communication. 

@@ -1,0 +1,10 @@
+\chapter{Main Board}
+\section{Introduction}
+For our 
+
+\section{Components choice and design implementation}
+We implemented the same way with different using same components. This time 5 V switching regulator showed even better performance - stable 4.98 V without ripple.
+
+ For the 12 V linear regulator we chose TS7812, with the recommended set up. We put 0.3 $\mu F$ as input $C_{in}$ and 0.1  $\mu F$ as output $C_{out}$ capacitor, following the the data sheet. In the previous project we achieved on our main board aroud 11.96 V stable DC voltage. In this project we are using the 12 V input only to drive the motors. The maximum $V_{cc}$ for them is 12 V, so we wanted to achieve values around 12 V. With the current main board with the TS7812 linear regulator we get stable 11.70 V without any ripple (by the support from the used capacitors). This value could be raised for full 12 V by adding an additional circuit, but our purpose is to drive the motor with some reserve below 12 V so this 0.3 V difference is acceptable for us as the motors don't need to be run on maximum voltage. If we want to get full 12 V we simply change the new lighter and smaller main board for the old one that is able to supply with higher voltage. The boards are compatible. 
+ 
+\section{Conclusions}

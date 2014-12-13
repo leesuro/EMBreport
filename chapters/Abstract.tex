@@ -1,0 +1,24 @@
+\label{Abstract}
+\addcontentsline{toc}{chapter}{\numberline{}Abstract}
+\begin{abstract}
+
+This document describes the methods and processes we were using to create our final
+project - an autonomous robotic vehicle "Escaper bot" that keeps a desired distance (escapes) from objects in front of it. We chose a distance sensor to get feedback from the environment to the motors. We chose this project to improve our knowledge in electronics systems as well as the control systems design. Nowadays many efforts are put into the development of intelligent cars as well as small autonomous mobile vehicles for various purposes (e.g. military, agriculture, household robotics). 
+\\
+We describe in details what components and designs we have used to achieve this goal. We describe the PCB boards we have printed and individual parts we built and put together. Finally we describe our approach toward designing the control system using the FPGA and uTosNet. 
+\end{abstract}
+
+\section{Methodology}
+First of all we created a plan of work and set our goals. Then after setting the main goal, in order to achieve it we divided the project into smaller sub parts:
+
+\begin{enumerate}
+  \item Design H-bridge and motor control (run the DC motors, H-bridge, security, quality)
+  \item Design the sensor part (IR sensor interfacing, ADC interfacing and controlling with FPGA)
+  \item A proper robot chassis
+  \item Control system with the FPGA
+\end{enumerate}
+
+We have created a list of necessary components for our project. After getting the components we tested them and made appropriate measurements with the available laboratory equipment. We found some improvements we could make so we added different components able to fulfil better the given requirements. Next we designed
+the PCB board so they were all consistent (we are using several boards). We printed
+the board and tested their functionality until getting the desired results. After the hardware part was finished we mounted every PCB on the chassis and began implementing the control system. 
+
