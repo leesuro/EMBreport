@@ -2,14 +2,13 @@
 \addcontentsline{toc}{chapter}{\numberline{}Abstract}
 \begin{abstract}
 
-This document describes the methods and processes we were using to create our final
-project - an autonomous robotic vehicle "Escaper bot" that keeps a desired distance (escapes) from objects in front of it. We chose a distance sensor to get feedback from the environment to the motors. We chose this project to improve our knowledge in electronics systems as well as the control systems design. Nowadays many efforts are put into the development of intelligent cars as well as small autonomous mobile vehicles for various purposes (e.g. military, agriculture, household robotics). 
+Nowadays, many efforts are put into the development of intelligent cars as well as small autonomous mobile vehicles for various purposes (e.g. military, agriculture, household robotics).Purpose of the document is to describe the methods and the different development stages of  the project "Escaper bot",an autonomous robotic vehicle  that keeps a desired distance (escapes) from objects placed in front of it. 
 \\
-We describe in details what components and designs we have used to achieve this goal. We describe the PCB boards we have printed and individual parts we built and put together. Finally we describe our approach toward designing the control system using the FPGA and uTosNet. 
+Furthermore,details about key components and circuit implementation to achieve this goal are described. 
 \end{abstract}
 
 \section{Methodology}
-First of all we created a plan of work and set our goals. Then after setting the main goal, in order to achieve it we divided the project into smaller sub parts:
+Before going deepen the project development, a plan of work and goals set have to be explained . Then after setting the main goal, in order to achieve it,the project has been sliced into different sub parts:
 
 \begin{enumerate}
   \item Design H-bridge and motor control (run the DC motors, H-bridge, security, quality)
@@ -18,7 +17,5 @@ First of all we created a plan of work and set our goals. Then after setting the
   \item Control system with the FPGA
 \end{enumerate}
 
-We have created a list of necessary components for our project. After getting the components we tested them and made appropriate measurements with the available laboratory equipment. We found some improvements we could make so we added different components able to fulfil better the given requirements. Next we designed
-the PCB board so they were all consistent (we are using several boards). We printed
-the board and tested their functionality until getting the desired results. After the hardware part was finished we mounted every PCB on the chassis and began implementing the control system. 
+The project has been structured in the following way:a list of necessary components has been compiled,each of them has been tested and a measurement of their ratings has been made with the available laboratory equipment.After the design of the different circuit composing the robot and performance test,the PCB boards have been printed and and constructed,trying to minimize the different sizes.Furthermore,some boards (A/D converter board,H-Bridges) have been tested singularly with the FPGA,with an early implementation of the code to make sure that the behaviour have been corresponding to the set expectation (i.e. the H-Bridge has been tested with the PWM generator implemented on the FPGA,in order to highlight and consequentially improve hypothetical weak points of the hardware configuration).
 

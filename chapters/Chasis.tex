@@ -37,9 +37,6 @@ We tested the sensor directly with the 5 V on the input and observed the results
 
 To interface the sensor output with the FPGA we need to convert the analog signal to digital. For this purpose we chose $TCL 1549CP$ 10-Bit A/D  successive-approximation Analog/Digital converter. As we are using ADC with the same reference value and $V_{cc}$ 5 V. This is a reasonable easy solution saving space and additional components. As an analog input to the ADC we put the $V_{o}$ from the sensor. At first we tried to use an non-inverting amplifier to stretch the sensor output voltage to 0-5 V. We managed to build this amplifying circuit but it appeared rather unnecessary as this way we only increase the signal range of sensor $V_{o}$ for about 1 V. The difference is not significant and doesn't have a big impact on the final control system. 
 
-To connect the output of ADC to the FPGA it is necessary to  lower the 5 V output from ADC to 3.3 V input of FPGA.  We chose to use a simple zener clamp (figure \ref{fig:zener}) that works like a voltage regulator \cite{inventors}, \cite{tricks}, which a bit slower, but stable and robust enough to perform under given conditions. When the $V_{in}$  is below diode's breakdown voltage, the $V_{o} = V_{out} $. When the voltage is above this value, the diode draws as much current as necessary to keep $V_{out}$ at the level breakdown voltage (for us 3.3 V). 
-We use a BZX79 - C3V3 Zener diode which working voltage is around 3.3 V. The resistor limits possible high currents through the diode to protect it. It is very recommended to be used. We tested the circuit with a 1 $k\Omega$ resistor. $I_{zener}=\frac{V_{in}-V_{out}}{R}=\frac{5-3.3}{1000}= 1.7 mA$  which is a value low enough. 
-
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{figures/zener}
@@ -47,6 +44,32 @@ We use a BZX79 - C3V3 Zener diode which working voltage is around 3.3 V. The res
 	\label{fig:zener}
 \end{figure}
 
+To connect the output of ADC to the FPGA it is necessary to  lower the 5 V output from ADC to 3.3 V input of FPGA.  We chose to use a simple zener clamp (figure \ref{fig:zener}) that works like a voltage regulator \cite{inventors}, \cite{tricks}, which a bit slower, but stable and robust enough to perform under given conditions. When the $V_{in}$  is below diode's breakdown voltage, the $V_{o} = V_{out} $. When the voltage is above this value, the diode draws as much current as necessary to keep $V_{out}$ at the level breakdown voltage (for us 3.3 V). 
+We use a BZX79 - C3V3 Zener diode which working voltage is around 3.3 V. The resistor limits possible high currents through the diode to protect it. It is very recommended to be used. We tested the circuit with a 1 $k\Omega$ resistor. $I_{zener}=\frac{V_{in}-V_{out}}{R}=\frac{5-3.3}{1000}= 1.7 mA$  which is a value low enough. 
+
+\begin{figure}[!ht]
+	\begin{subfigure}{.49\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{figures/sensorrSCH}
+		\caption{Schematics}
+		\label{fig:sensorSCH}
+	\end{subfigure}
+	\begin{subfigure}{.49\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{figures/sensorrBRD}
+		\caption{Board}
+		\label{fig:sensorBRD}
+	\end{subfigure}
+\caption{The H-Bridge drive board}
+\label{fig:sensorr}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.5\textwidth]{figures/printsensor}
+	\caption{Printed sensor board with the ADC}
+	\label{fig:printsensor}
+\end{figure}
 
 \newpage
 \section{Conclusions}
@@ -57,15 +80,26 @@ After testing every component and interfacing the sensor with FPGA through the A
 
 In the final part we designed a chasis and printed it on a 3D printer. This chasis
 was aimed to be as light as possible for enabling the robot to perform better and as much mechanically robust as necessary. The chasis can be seen here:
-\\It is a planar platform on which we mounted the printed boards (2 H-bridge boards, 1 main board, 1 logical gate board, and 1 sensor board). The motors are mounted in two specially designed holes to stay fixed while on duty. 
+\\It is a planar platform on which we mounted the printed boards (2 H-bridge boards, 1 main board, 1 drive board, and 1 sensor board). The motors are mounted in two specially designed holes to stay fixed while on duty. 
 
-\chapter{notes}
-We measured the H-bridge, with 12 V Vcc and 3.3 V on the transistor base , on the motor pins were 11.3 V. Its good
-We tested also NAND and AND circuit to prevent 1,1 state on the h-bridge, but we got problems with pwm, then current so we decided for a simpler solution. DIR and SPEED.
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/printcar}
+	\caption{Robot with all the boards mounted}
+	\label{fig:car1}
+\end{figure}
 
-Insert boards and schematics - Michelangelo
-Insert remaining pictures into H-bridge chapter - Michelangelo
-Improve switching regulator part
-ADD references
-ADD introduction and
-Insert my camera photos
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/printcar2}
+	\caption{Robot with all the boards mounted}
+	\label{fig:car2}
+\end{figure}
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/printcar2}
+	\caption{Robot with all the boards mounted}
+	\label{fig:car2}
+\end{figure}
